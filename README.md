@@ -30,9 +30,6 @@ yarn add antd-nepali-datepicker
 Make sure antd and react are already installed in your project.
 
 🚀 Usage
-jsx
-Copy
-Edit
 import React from "react";
 import { NepaliDatePicker, NepaliRangePicker } from "antd-nepali-datepicker";
 import "antd/dist/antd.css"; // if not already imported
@@ -50,6 +47,7 @@ const App = () => {
 };
 
 export default App;
+
 🛠️ Props
 Both NepaliDatePicker and NepaliRangePicker accept all the props from Ant Design’s original components.
 
@@ -72,14 +70,10 @@ Fully supports dark mode if your app has it enabled with Ant Design.
 🧪 Demo
 You can run the demo locally (if provided), or visit the hosted playground (coming soon).
 
-bash
-Copy
-Edit
 git clone https://github.com/your-username/antd-nepali-datepicker.git
 cd antd-nepali-datepicker
 npm install
 npm run dev
-📷 Screenshots
 
 Picker	Range Picker
 🙌 Contributing
@@ -88,24 +82,9 @@ PRs are welcome! Feel free to open issues for bugs, suggestions, or feature requ
 🧾 License
 MIT © Anish Pokhrel
 
-📬 Contact
-📧 anishpokhrel.dev@gmail.com
 
-🌐 Portfolio
 
-python
-Copy
-Edit
 
----
-
-### ✅ Next steps:
-
-1. Add screenshots in a `screenshots/` folder.
-2. Host a preview image or demo if you'd like to add a live example.
-3. Update GitHub repo name and username in the placeholders.
-
-Let me know if you'd like me to generate a `vite.config.js` for building the package in library mode or help with publishing it to GitHub as well!
 
 
 
