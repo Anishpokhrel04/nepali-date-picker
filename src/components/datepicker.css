@@ -1,0 +1,35 @@
+:root {
+  --defaultColor: #1db954;
+}
+.ant-picker-outlined {
+  border-color: var(--defaultColor);
+}
+.ant-picker-dropdown .ant-picker-header,
+.ant-picker-dropdown .ant-picker-header:hover,
+.ant-picker-dropdown .ant-picker-header > button {
+  background-color: var(--defaultColor);
+  color: white;
+}
+.ant-picker-dropdown .ant-picker-header-view > button:hover,
+:where(.css-dev-only-do-not-override-1261szd) a:hover {
+  color: black;
+}
+
+.ant-picker-dropdown
+  .ant-picker-cell-in-view.ant-picker-cell-selected:not(
+    .ant-picker-cell-disabled
+  )
+  .ant-picker-cell-inner {
+  background-color: var(--defaultColor);
+  color: white;
+}
+.ant-picker-dropdown
+  .ant-picker-cell-in-view.ant-picker-cell-today
+  .ant-picker-cell-inner::before {
+  border: 1px solid var(--defaultColor);
+}
+.ant-picker-dropdown .ant-picker-ranges,
+:where(.css-dev-only-do-not-override-1261szd) a {
+  background-color: var(--defaultColor);
+  color: white;
+}
