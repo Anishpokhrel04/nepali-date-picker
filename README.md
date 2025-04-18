@@ -1,12 +1,115 @@
-# React + Vite
+📄 README.md for antd-nepali-datepicker
+markdown
+Copy
+Edit
+# 🗓️ AntD Nepali DatePicker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A custom React DatePicker and RangePicker component for [Ant Design](https://ant.design/) that supports **Nepali (Bikram Sambat) calendar**, with English dates displayed at the bottom-right of each cell.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![AntD Nepali DatePicker Preview](https://your-preview-image-link.com) <!-- (Optional preview GIF or image) -->
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 🌐 Fully compatible with Ant Design ecosystem
+- 🗓️ Supports both DatePicker and RangePicker
+- 🇳🇵 Displays Nepali dates prominently
+- 🇬🇧 English dates shown subtly for reference
+- 🎨 Styled and responsive
+- 🌘 Dark mode support (inherits from AntD)
+
+---
+
+## 📦 Installation
+
+```bash
+npm install antd-nepali-datepicker
+# or
+yarn add antd-nepali-datepicker
+Make sure antd and react are already installed in your project.
+
+🚀 Usage
+jsx
+Copy
+Edit
+import React from "react";
+import { NepaliDatePicker, NepaliRangePicker } from "antd-nepali-datepicker";
+import "antd/dist/antd.css"; // if not already imported
+
+const App = () => {
+  return (
+    <div>
+      <h3>Single Date Picker</h3>
+      <NepaliDatePicker onChange={(date, dateString) => console.log(date, dateString)} />
+
+      <h3>Range Picker</h3>
+      <NepaliRangePicker onChange={(dates, dateStrings) => console.log(dates, dateStrings)} />
+    </div>
+  );
+};
+
+export default App;
+🛠️ Props
+Both NepaliDatePicker and NepaliRangePicker accept all the props from Ant Design’s original components.
+
+Common props you can use:
+
+Prop	Type	Description
+onChange	function	Callback when date changes
+value	moment	Controlled value (moment object)
+format	string	Format string (default: YYYY-MM-DD)
+placeholder	string or [string, string]	Custom placeholder text
+disabled	boolean	Disable the picker
+...	any	All AntD DatePicker props are supported
+📌 Notes
+Internally uses bikram-sambat-js for conversion.
+
+You can show or hide English dates using a prop (coming soon).
+
+Fully supports dark mode if your app has it enabled with Ant Design.
+
+🧪 Demo
+You can run the demo locally (if provided), or visit the hosted playground (coming soon).
+
+bash
+Copy
+Edit
+git clone https://github.com/your-username/antd-nepali-datepicker.git
+cd antd-nepali-datepicker
+npm install
+npm run dev
+📷 Screenshots
+
+Picker	Range Picker
+🙌 Contributing
+PRs are welcome! Feel free to open issues for bugs, suggestions, or feature requests.
+
+🧾 License
+MIT © Anish Pokhrel
+
+📬 Contact
+📧 anishpokhrel.dev@gmail.com
+
+🌐 Portfolio
+
+python
+Copy
+Edit
+
+---
+
+### ✅ Next steps:
+
+1. Add screenshots in a `screenshots/` folder.
+2. Host a preview image or demo if you'd like to add a live example.
+3. Update GitHub repo name and username in the placeholders.
+
+Let me know if you'd like me to generate a `vite.config.js` for building the package in library mode or help with publishing it to GitHub as well!
+
+
+
+
+
+
+
