@@ -1,6 +1,8 @@
 # Nepali Date Picker
 
 A antd Nepali DatePicker component for Ant Design with full Bikram Sambat (BS) ↔ Gregorian (AD) conversion support.
+[![npm](https://img.shields.io/npm/v/antd-nepali-date-picker)](https://www.npmjs.com/package/antd-nepali-date-picker)
+
 
 ## Table of Contents
 
