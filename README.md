@@ -1,94 +1,82 @@
-📄 README.md for antd-nepali-datepicker
-markdown
-Copy
-Edit
-# 🗓️ AntD Nepali DatePicker
+# Nepali Date Picker
 
-A custom React DatePicker and RangePicker component for [Ant Design](https://ant.design/) that supports **Nepali (Bikram Sambat) calendar**, with English dates displayed at the bottom-right of each cell.
+A antd Nepali DatePicker component for Ant Design with full Bikram Sambat (BS) ↔ Gregorian (AD) conversion support.
 
----
+## Table of Contents
 
-![AntD Nepali DatePicker Preview](https://your-preview-image-link.com) <!-- (Optional preview GIF or image) -->
-
-## ✨ Features
-
-- 🌐 Fully compatible with Ant Design ecosystem
-- 🗓️ Supports both DatePicker and RangePicker
-- 🇳🇵 Displays Nepali dates prominently
-- 🇬🇧 English dates shown subtly for reference
-- 🎨 Styled and responsive
-- 🌘 Dark mode support (inherits from AntD)
-
----
+- [Installation](#installation)
+- [Features](#features)
+- [Usage](#usage)
+  - [Basic Usage](#basic-usage)
+- [Contributing](#contributing)
+- [License](#license)
 
 ## 📦 Installation
 
-```bash
-npm install antd-nepali-datepicker
-# or
-yarn add antd-nepali-datepicker
-Make sure antd and react are already installed in your project.
+````bash
+npm install antd-nepali-date-picker
 
-🚀 Usage
-import React from "react";
-import { NepaliDatePicker, NepaliRangePicker } from "antd-nepali-datepicker";
-import "antd/dist/antd.css"; // if not already imported
+## Features
+
+- Bikram Sambat (BS) to Gregorian (AD) conversion and vice versa.
+- Supports both Nepali and English locales.
+- Based on Ant Design `DatePicker` and `RangePicker`.
+- Clean and customizable UI with optional dark mode support.
+
+## Usage
+
+### Basic Usage
+
+```javascript
+import NepaliDatePicker from "antd-nepali-date-picker";
+
+
+// Get today's date in Nepali calendar
+const todayNepali = NepaliDateConverter.getTodayBs();
+````
+
+Then, you can use the Nepali date picker component in your React project as follows:
+
+```bash
+import React from 'react';
+import NepaliDatePicker from "antd-nepali-date-picker";
+
+import 'antd/dist/antd.css';
 
 const App = () => {
+  const onChange = (date: any, dateString: string) => {
+    console.log(date, dateString);
+  };
+
   return (
     <div>
-      <h3>Single Date Picker</h3>
-      <NepaliDatePicker onChange={(date, dateString) => console.log(date, dateString)} />
-
-      <h3>Range Picker</h3>
-      <NepaliRangePicker onChange={(dates, dateStrings) => console.log(dates, dateStrings)} />
+      <h1>Nepali Date Picker</h1>
+<NepaliDatePicker type="nepali" lang="nepali" onChange={handleChange} />
+<NepaliDatePicker type="english" onChange={handleChange} />
     </div>
   );
 };
 
 export default App;
 
-🛠️ Props
-Both NepaliDatePicker and NepaliRangePicker accept all the props from Ant Design’s original components.
+```
 
-Common props you can use:
+### Components
 
-Prop	Type	Description
-onChange	function	Callback when date changes
-value	moment	Controlled value (moment object)
-format	string	Format string (default: YYYY-MM-DD)
-placeholder	string or [string, string]	Custom placeholder text
-disabled	boolean	Disable the picker
-...	any	All AntD DatePicker props are supported
-📌 Notes
-Internally uses bikram-sambat-js for conversion.
+#### NepaliDatePicker
 
-You can show or hide English dates using a prop (coming soon).
+The NepaliDatePicker component supports all the same props as the Ant Design DatePicker component. Please refer to the [Ant Design DatePicker documentation](https://ant.design/components/date-picker/) for detailed information.
 
-Fully supports dark mode if your app has it enabled with Ant Design.
+## Contributing
 
-🧪 Demo
-You can run the demo locally (if provided), or visit the hosted playground (coming soon).
+If you want to contribute to this project, please follow these steps:
 
-git clone https://github.com/your-username/antd-nepali-datepicker.git
-cd antd-nepali-datepicker
-npm install
-npm run dev
+- Fork the repository.
+- Create a new branch (git checkout -b feature-branch).
+- Make your changes and commit them (git commit -am 'Add new feature').
+- Push to the branch (git push origin feature-branch).
+- Create a new Pull Request.
 
-Picker	Range Picker
-🙌 Contributing
-PRs are welcome! Feel free to open issues for bugs, suggestions, or feature requests.
+## License
 
-🧾 License
-MIT © Anish Pokhrel
-
-
-
-
-
-
-
-
-
-
-
+This project is licensed under the MIT License.
