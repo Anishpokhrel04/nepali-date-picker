@@ -33,3 +33,6 @@
   background-color: var(--defaultColor);
   color: white;
 }
+.ant-picker-outlined:hover {
+  border-color: var(--defaultColor);
+}

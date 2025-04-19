@@ -1,23 +1,52 @@
+/**
+ * 📅 Nepali Date Conversion Utility (Bikram Sambat ↔ Gregorian)
+ * -------------------------------------------------------------
+ * This utility handles conversion between English (AD) and Nepali (BS) dates,
+ * including weekday calculation, validation, and calendar metadata.
+ *
+ * Built with ❤️ by Anish Pokhrel (@anishpokhrel) - 2025
+ * Designed for seamless integration with custom Ant Design DatePicker components.
+ */
 import dayjs from "dayjs";
 import weekOfYear from "dayjs/plugin/weekOfYear";
 import { NepaliDateConverter } from "..";
 
 dayjs.extend(weekOfYear);
+
 const nepaliMonthNames = [
-  "Baishakh",
-  "Jestha",
-  "Ashad",
-  "Shrawan",
-  "Bhadra",
-  "Ashwin",
-  "Kartik",
-  "Mangsir",
-  "Poush",
-  "Magh",
-  "Falgun",
-  "Chaitra",
+  "बैशाख",
+  "जेठ",
+  "असार",
+  "श्रावण",
+  "भदौ",
+  "आश्विन",
+  "कार्तिक",
+  "मंसिर",
+  "पुष",
+  "माघ",
+  "फाल्गुन",
+  "चैत्र",
 ];
-const weekNepaliDayNames = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
+
+const weekNepaliDayNames = [
+  "आइत",
+  "सोम",
+  "मंगल",
+  "बुध",
+  "बिही",
+  "शुक्र",
+  "शनि",
+];
+
+// Function to convert English digits to Nepali
+const englishToNepaliNumbers = (number) => {
+  const nepaliDigits = ["०", "१", "२", "३", "४", "५", "६", "७", "८", "९"];
+  return number
+    .toString()
+    .split("")
+    .map((digit) => nepaliDigits[parseInt(digit)])
+    .join("");
+};
 
 export const nepaliDateConfig = {
   // Get methods
@@ -186,36 +215,42 @@ export const nepaliDateConfig = {
     },
     format: (_, date, format) => {
       if (!date || !date.isValid()) return "";
+
       const bsDate = NepaliDateConverter.adToBs(date);
+
+      // Convert numbers to Nepali before returning
+      const formatNepaliNumbers = (str) =>
+        str.replace(/\d/g, (digit) => englishToNepaliNumbers(digit));
 
       // Cell display (just the day number)
       if (format === "date") {
-        return bsDate.day.toString();
+        return formatNepaliNumbers(bsDate.day.toString());
       }
 
       // Year display in header
       if (format === "YYYY" || format === "yearFormat") {
-        return bsDate.year.toString();
+        return formatNepaliNumbers(bsDate.year.toString());
       }
 
       // Month display in header
       if (format === "M" || format === "monthFormat") {
-        return bsDate.month.toString();
+        return formatNepaliNumbers(bsDate.month.toString());
       }
 
       // Day display
       if (format === "D" || format === "dayFormat") {
-        return bsDate.day.toString();
+        return formatNepaliNumbers(bsDate.day.toString());
       }
 
       // Input field display
       if (format === "dateFormat" || format === "YYYY-MM-DD") {
-        return `${bsDate.year}-${bsDate.month
-          .toString()
-          .padStart(2, "0")}-${bsDate.day.toString().padStart(2, "0")}`;
+        return `${formatNepaliNumbers(
+          bsDate.year.toString()
+        )}-${formatNepaliNumbers(
+          bsDate.month.toString().padStart(2, "0")
+        )}-${formatNepaliNumbers(bsDate.day.toString().padStart(2, "0"))}`;
       }
 
-      // Default case: just show day number
       return bsDate.year.toString();
     },
     parse: (_, text) => {

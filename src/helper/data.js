@@ -1,3 +1,12 @@
+/**
+ * 📅 Nepali Date Conversion Utility (Bikram Sambat ↔ Gregorian)
+ * -------------------------------------------------------------
+ * This utility handles conversion between English (AD) and Nepali (BS) dates,
+ * including weekday calculation, validation, and calendar metadata.
+ *
+ * Built with ❤️ by Anish Pokhrel (@anishpokhrel) - 2025
+ * Designed for seamless integration with custom Ant Design DatePicker components.
+ */
 export const START_WEEK_DAY_OF_2000 = 3;
 export const START_ENGLISH_DATE_OF_2000_BS = "1943-04-14";
 

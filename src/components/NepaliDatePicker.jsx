@@ -6,14 +6,14 @@ import enLocale from "../utils/ne-locale";
 import neLocale from "../utils/en-locale";
 import "./datepicker.css";
 
-const CustomDatePicker = generatePicker(nepaliDateConfig);
+const NewDatePicker = generatePicker(nepaliDateConfig);
 
 const NepaliDatePicker = forwardRef(({ type, lang, ...rest }, ref) => {
-  const locale = lang === "ne" ? neLocale : enLocale;
+  const locale = lang === "nepali" ? neLocale : enLocale;
 
-  if (type === "ne")
+  if (type === "nepali")
     return (
-      <CustomDatePicker {...rest} locale={locale} ref={ref} lang="nepali" />
+      <NewDatePicker {...rest} locale={locale} ref={ref} lang="nepali" />
     );
   return <DatePicker {...rest} ref={ref} />;
 });

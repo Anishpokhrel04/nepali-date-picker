@@ -1,3 +1,12 @@
+/**
+ * 📅 Nepali Date Conversion Utility (Bikram Sambat ↔ Gregorian)
+ * -------------------------------------------------------------
+ * This utility handles conversion between English (AD) and Nepali (BS) dates,
+ * including weekday calculation, validation, and calendar metadata.
+ *
+ * Built with ❤️ by Anish Pokhrel (@anishpokhrel) - 2025
+ * Designed for seamless integration with custom Ant Design DatePicker components.
+ */
 const nepaliMonthNames = [
   "बैशाख",
   "जेठ",
@@ -24,7 +33,7 @@ const weekNepaliDayNames = [
 
 const neLocale = {
   lang: {
-    locale: "ne",
+    locale: "nepali",
     placeholder: "मिति चयन गर्नुहोस्",
     rangePlaceholder: ["सुरुको मिति", "अन्तिम मिति"],
     today: "आज",
